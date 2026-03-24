@@ -1,38 +1,34 @@
 # DidaticMaterials_SMA
+
 Repositório voltado à criação de tutoriais e divulgação de ferramentas de programação multiagente. 
 
 ## Sumário
-- [DidaticMaterials\_SMA](#didaticmaterials_sma)
-  - [Sumário](#sumário)
-  - [Conteúdo Didático](#conteúdo-didático)
-  - [NetLogo](#netlogo)
-    - [Descrição](#descrição)
-    - [Guias de Uso](#guias-de-uso)
-  - [Estrutura](#estrutura)
+- [Conteúdo Didático](#conteúdo-didático)
+- [NetLogo](#netlogo)
+- [Estrutura](#estrutura)
 
 ## Conteúdo Didático
 
+- [Guia de Uso - NetLogo](./docs/netlogo/guias.md)
+- *Modelos Básicos (em breve)*
+- *Modelos Avançados (em breve)*
+
 ## NetLogo
 
-### Descrição
+O [NetLogo](https://ccl.northwestern.edu/netlogo/) é um ambiente de modelagem e simulação programável para a criação de modelos baseados em agentes (ABM). Ele simula fenômenos naturais e sociais complexos, onde múltiplos agentes independentes interagem entre si e com o ambiente. 
 
-O [NetLogo](https://www.netlogo.org/) é um ambiente de modelagem e simulação programável, voltado para a criação de modelos baseados em agentes (Agent-Based Modeling - ABM). Ele permite simular fenômenos naturais e sociais complexos, onde múltiplos "agentes" independentes interagem entre si e com o ambiente, permitindo observar como comportamentos individuais geram padrões emergentes em grande escala.
+Ferramenta amplamente utilizada para pesquisa e educação, desenvolvida por [Uri Wilensky](https://ccl.northwestern.edu/Uri.shtml) no *[Center for Connected Learning and Computer-Based Modeling (CCL)](https://ccl.northwestern.edu/)* da Northwestern University.
 
-A ferramenta é amplamente utilizada para pesquisa e educação, sendo conhecida por sua facilidade de aprendizado e por ter sido desenvolvida por [Uri Wilensky](https://ccl.northwestern.edu/Uri.shtml) no _[Center for Connected Learning and Computer-Based Modeling (CCL)](https://ccl.northwestern.edu/)_ da _[Northwestern University](https://www.northwestern.edu/)_.
-
-### Guias de Uso
-
-Neste repositório, é possível encontrar os materiais didáticos e guias em [docs/netlogo/guias.md](docs/netlogo/guias.md)
+**Acesse os materiais didáticos e guias:** [docs/netlogo/guias.md](./docs/netlogo/guias.md)
 
 ## Estrutura
-```
+```text
 ├── README.md           # Guia principal e índice
-├── LICENSE             # Licença (ex: MIT ou CC BY-SA)
-├── docs/               # Teoria, tutoriais em Markdown e referências
-├── models/             # Arquivos .nlogo ou código-fonte principal
+├── LICENSE             # Licença
+├── docs/               # Teoria, tutoriais e referências
+│   └── netlogo/        # Guias específicos de NetLogo
+├── models/             # Arquivos .nlogo ou código-fonte
 │   ├── basic/          # Modelos introdutórios
-│   └── advanced/       # Modelos complexos ou estudos de caso
-├── assets/             # Imagens, GIFs das simulações e diagramas
-└── scripts/            # Scripts auxiliares (R, Python para análise de dados)
-```
-
+│   └── advanced/       # Modelos complexos
+├── assets/             # Imagens e GIFs das simulações
+└── scripts/            # Scripts auxiliares para análise
