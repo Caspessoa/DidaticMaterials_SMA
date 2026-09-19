@@ -1,5 +1,7 @@
 # Guia NetLogo
 
+[← Voltar ao índice](../../README.md) · [Guia GAMA Platform](../gama/guias.md)
+
 ## Sumário
 
 - [Download da Ferramenta](#download-da-ferramenta)
@@ -13,9 +15,11 @@
 
 ## Download da Ferramenta
 
-Baixe o NetLogo no [site oficial](https://ccl.northwestern.edu/netlogo/download.shtml).
+Baixe o NetLogo no [site oficial](https://www.netlogo.org/download/). O site do NetLogo foi migrado para o domínio `netlogo.org`; os endereços antigos em `ccl.northwestern.edu/netlogo/` continuam funcionando apenas por redirecionamento.
 
-![Página de Download](../../assets/homepagenetlogo.png)
+![Página de Download](../../assets/netlogo/homepagenetlogo.png)
+
+> **NetLogo 7.** A versão 7.0 foi lançada em setembro de 2025 e trouxe mudanças relevantes: interface modernizada com temas claro, escuro e clássico; novas ferramentas de edição de widgets; e, principalmente, um **novo formato de arquivo `.nlogox`** (baseado em XML) que substitui o antigo `.nlogo`. Modelos antigos continuam abrindo normalmente — são convertidos para `.nlogox`, e o NetLogo 7 salva apenas nesse novo formato. As abas Interface, Info e Code permanecem as mesmas.
 
 ## Versões Disponíveis
 
@@ -26,7 +30,7 @@ Baixe o NetLogo no [site oficial](https://ccl.northwestern.edu/netlogo/download.
   Versão web do NetLogo padrão, executada diretamente do navegador.
 
 - **[Turtle Universe](https://www.turtlesim.com/products/turtle-universe/)**
-  Versão mobile. Permite aprender fenômenos sociais e científicos através de representações interativas e micro mundos.
+  Versão para smartphones e tablets (iOS, Android e Chrome OS), também disponível como pacote independente para Windows e macOS. Usa o motor do NetLogo com interface própria e abre a maioria dos modelos NetLogo, NetLogo Web e NetTango. Permite aprender fenômenos sociais e científicos através de representações interativas e micro mundos.
 
 - **[NetTango](https://ccl.northwestern.edu/nettangoweb/)**
   Interface baseada em blocos para o NetLogo Web. Focada na criação de modelos educacionais com blocos de programação específicos.
@@ -42,7 +46,7 @@ A interface principal do NetLogo é dividida em três abas fundamentais, essenci
 
 [add image]
 
-- Info: Um editor de texto rico utilizado para documentar o modelo. Segue um padrão de tópicos (O que é o modelo?, Como funciona?, Como usar?) e suporta formatação em Markdown. É a documentação interna obrigatória para descrever as regras da simulação.
+- Info: Um editor de texto rico utilizado para documentar o modelo. Segue um padrão de tópicos (O que é o modelo?, Como funciona?, Como usar?) e suporta formatação em Markdown. É a documentação interna do modelo, usada para descrever as regras da simulação — não é exigida para executar o modelo, mas é a prática recomendada em todos os modelos da biblioteca oficial.
 
 [add image]
 
@@ -56,7 +60,7 @@ A configuração do ambiente de simulação dita as regras espaciais e temporais
 
 - Topologia e Dimensões (World): O ambiente é um grid de coordenadas. A janela de configurações permite definir as fronteiras máximas e mínimas nos eixos X e Y (min-pxcor, max-pxcor, min-pycor, max-pycor).
 
-- World Wrap (Torus): Opções que definem se o mundo tem bordas rígidas ou se conecta topologicamente em um cilindro ou toro (se um agente sai pela direita, reaparece pela esquerda).
+- World Wrap (Torus): Opções que definem se o mundo tem bordas rígidas ou se conecta topologicamente em um cilindro ou toro (se um agente sai pela direita, reaparece pela esquerda). Por padrão, as duas direções vêm marcadas — ou seja, o mundo é um toro e nenhum agente se perde fora da área visível. É uma diferença importante em relação ao [GAMA](../gama/guias.md#configuração), onde o padrão é o oposto.
 
 - Patch Size: Define o tamanho em pixels de cada célula (patch) na tela, afetando a resolução e o tamanho visual do ambiente sem alterar a lógica matemática.
 
@@ -92,7 +96,7 @@ O paradigma de codificação do NetLogo baseia-se em procedimentos (procedures),
 
 Abaixo, um modelo funcional e minimalista de caminhada aleatória (random walk):
 
-```Código
+```netlogo
 ;; Declaração do procedimento de inicialização
 to setup
   clear-all                  ;; Limpa todo o ambiente, agentes e memória
@@ -118,7 +122,12 @@ end
 
 [add imagem da simulação]
 
+Para rodar o modelo, o código sozinho não basta: é preciso criar na aba Interface dois botões (`Button`) associados aos procedimentos `setup` e `go`, marcando a opção *Forever* no botão `go` para que ele itere continuamente.
+
+Repare que nenhum comando impede a turtle de sair do mundo — isso não é necessário porque o mundo do NetLogo é um toro por padrão, e o agente reaparece do lado oposto. O modelo equivalente em [GAMA](../gama/guias.md#código-exemplo) precisa tratar esse limite explicitamente.
+
 ## Documentação Oficial
 
-- [NetLogo User Manual](https://ccl.northwestern.edu/netlogo/docs/)
-- [NetLogo Dictionary](https://ccl.northwestern.edu/netlogo/docs/dictionary.html)
+- [NetLogo User Manual](https://docs.netlogo.org/)
+- [NetLogo Dictionary](https://docs.netlogo.org/dictionary) — referência de todas as primitivas
+- [Site oficial](https://www.netlogo.org/) — downloads, tutoriais e Modeling Commons
